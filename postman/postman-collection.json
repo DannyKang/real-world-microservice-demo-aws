@@ -1,0 +1,125 @@
+{
+    "info": {
+        "_postman_id": "b3591b07-002a-4540-ab97-166dbbac5184",
+        "name": "reInvent-Microservice-Requests",
+        "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Sign-Up-Cognito-Request",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-amz-json-1.1",
+                        "type": "text"
+                    },
+                    {
+                        "key": "x-amz-target",
+                        "value": "AWSCognitoIdentityProviderService.SignUp",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"ClientId\":\"<YOUR COGNITO APP CLIENT ID>\",\"Username\":\"<YOUR EMAIL ID>\",\"Password\":\"<YOUR PASSWORD>\",\"UserAttributes\":[{\"Name\":\"email\",\"Value\":\"<YOUR EMAIL ID>\"}],\"ValidationData\":null}"
+                },
+                "url": "https://cognito-idp.us-west-2.amazonaws.com/"
+            },
+            "response": []
+        },
+        {
+            "name": "Sign-Up-Confirmation-Request",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "x-amz-target",
+                        "value": "AWSCognitoIdentityProviderService.ConfirmSignUp",
+                        "type": "text"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-amz-json-1.1",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"ClientId\":\"<YOUR COGNITO APP CLIENT ID>\",\"ConfirmationCode\":\"<YOUR VERIFICATION CODE>\",\"Username\":\"<YOUR EMAIL ID>\",\"ForceAliasCreation\":true}"
+                },
+                "url": "https://cognito-idp.us-west-2.amazonaws.com/"
+            },
+            "response": []
+        },
+        {
+            "name": "get-access-token-request",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-amz-json-1.1",
+                        "type": "text"
+                    },
+                    {
+                        "key": "x-amz-target",
+                        "value": "AWSCognitoIdentityProviderService.InitiateAuth",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"AuthFlow\":\"USER_PASSWORD_AUTH\",\"ClientId\":\"<YOUR COGNITO APP CLIENT ID>\",\"AuthParameters\":{\"USERNAME\":\"<YOUR EMAIL ID>\",\"PASSWORD\":\"<YOUR PASSWORD>\"},\"ClientMetadata\":{}}"
+                },
+                "url": "https://cognito-idp.us-west-2.amazonaws.com/"
+            },
+            "response": []
+        },
+        {
+            "name": "Create-Application-Request",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "<YOUR IdToken>",
+                        "type": "text"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"applicationId\":\"microservice-test-app\",\"author\":\"team\",\"description\":\"Reinvent microservice dem\",\"homePageUrl\":\"https://www.amazon.com\"}"
+                },
+                "url": "<YOUR API Invoke URL>"
+            },
+            "response": []
+        },
+        {
+            "name": "get-Applicationlist-Request",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "<YOUR IdToken>",
+                        "type": "text"
+                    },
+                    {
+                        "key": "content-type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "url": "<YOUR API Invoke URL>"
+            },
+            "response": []
+        }
+    ]
+}
