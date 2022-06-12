@@ -25,7 +25,7 @@
                     "mode": "raw",
                     "raw": "{\"ClientId\":\"<YOUR COGNITO APP CLIENT ID>\",\"Username\":\"<YOUR EMAIL ID>\",\"Password\":\"<YOUR PASSWORD>\",\"UserAttributes\":[{\"Name\":\"email\",\"Value\":\"<YOUR EMAIL ID>\"}],\"ValidationData\":null}"
                 },
-                "url": "https://cognito-idp.us-west-2.amazonaws.com/"
+                "url": "https://cognito-idp.ap-northeast-2.amazonaws.com/"
             },
             "response": []
         },
@@ -49,7 +49,7 @@
                     "mode": "raw",
                     "raw": "{\"ClientId\":\"<YOUR COGNITO APP CLIENT ID>\",\"ConfirmationCode\":\"<YOUR VERIFICATION CODE>\",\"Username\":\"<YOUR EMAIL ID>\",\"ForceAliasCreation\":true}"
                 },
-                "url": "https://cognito-idp.us-west-2.amazonaws.com/"
+                "url": "https://cognito-idp.ap-northeast-2.amazonaws.com/"
             },
             "response": []
         },
@@ -73,7 +73,7 @@
                     "mode": "raw",
                     "raw": "{\"AuthFlow\":\"USER_PASSWORD_AUTH\",\"ClientId\":\"<YOUR COGNITO APP CLIENT ID>\",\"AuthParameters\":{\"USERNAME\":\"<YOUR EMAIL ID>\",\"PASSWORD\":\"<YOUR PASSWORD>\"},\"ClientMetadata\":{}}"
                 },
-                "url": "https://cognito-idp.us-west-2.amazonaws.com/"
+                "url": "https://cognito-idp.ap-northeast-2.amazonaws.com/"
             },
             "response": []
         },
